@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Каталог — FloraHouse</title>
+<link rel="stylesheet" href="styles.css" />
+<style>
+body {
+  background: #fcf8f4;
+}
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 картки в ряд */
+  gap: 24px;
+  margin-top: 32px;
+}
+@media (max-width: 700px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.product-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 12px #0001;
+  padding: 0 0 18px 0;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow .2s;
+}
+.product-card:hover {
+  box-shadow: 0 4px 24px #0002;
+}
+.product-img {
+  background: #f3f6f2;
+  border-radius: 12px 12px 0 0;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.product-img img,
+.product-img svg {
+  width: 180px;
+  height: 180px;
+  display: block;
+}
+.product-info {
+  padding: 18px 20px 0 20px;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.product-title {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 0;
+}
+.product-desc {
+  color: #666;
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+.product-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  margin-top: 18px;
+}
+.product-price {
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: #234d2a;
+}
+.product-btn {
+  background: #234d2a;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 7px 22px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background .2s;
+}
+.product-btn:hover {
+  background: #1a3a1e;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header class="header">
+  <div class="brand">
+    <div class="logo">FloraHouse</div>
+    <div class="tag">Катерина Головаш</div>
+  </div>
+  <nav class="nav">
+    <a href="index.html">Головна</a>
+    <a href="catalog.html">Каталог</a>
+    <a href="about.html">Про компанію</a>
+    <a href="delivery.html">Доставка/Оплата</a>
+    <a href="contacts.html">Контакти</a>
+    <a href="blog.html">Блог</a>
+    <a href="cart.html" id="cartBtn">Кошик <span id="cartCount" class="cart-bubble" style="display:none">0</span></a>
+  </nav>
+</header>
+
+<main style="margin-top:18px">
+  <div style="display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap">
+    <div style="display:flex;gap:10px;align-items:center">
+      <input id="search" class="input" placeholder="Пошук..." />
+    </div>
+    <div class="small">Показано товари: <span id="shownCount">18</span></div>
+  </div>
+
+  <div id="products" class="products-grid">
+    <!-- Всі картки товару мають бути тут -->
+    <!-- 1 -->
+    <div class="product-card">
+      <div class="product-img">
+        <img src="images/туябрабант.png" alt="Туя Brabant" width="300" height="300">
+      </div>
+      <div class="product-info">
+        <div class="product-title">Туя Brabant (140–160 см) </div>
+        <div class="product-desc">Швидкоросла хвойна рослина з колоноподібною формою, що ідеально підходить для створення живоплотів завдяки щільній, яскраво-зеленій хвої, яка частково зберігає свій колір взимку.</div>
+      </div>
+      <div class="product-bottom">
+        <span class="product-price">1000 ₴</span>
+        <button class="product-btn">Додати</button>
+      </div>
+    </div>
+    <!-- 2 -->
+    <div class="product-card">
+      <div class="product-img">
+        <img src="images/туяданіка.jpg" alt="Туя Danica" width="140" height="140">
+      </div>
+      <div class="product-info">
+        <div class="product-title">Туя Danica (45–50 см)</div>
+        <div class="product-desc">Мініатюрний, повільно зростаючий сорт, що відрізняється ідеальною кулястою формою та щільною, насичено-зеленою лускатою хвоєю.</div>
+      </div>
+      <div class="product-bottom">
+        <span class="product-price">450 ₴</span>
+        <button class="product-btn">Додати</button>
+      </div>
+    </div>
+    <!-- 3 -->
+    <div class="product-card">
+      <div class="product-img">
+        <img src="images/туяколумна.webp" alt="Туя Columna" width="140" height="140">
+      </div>
+      <div class="product-info">
+        <div class="product-title">Туя Columna 160–180 см</div>
+        <div class="product-desc">Класичний, високорослий сорт з дуже вузькою та елегантною колоноподібною кроною, який має темно-зелену блискучу хвою, що зберігає свій насичений колір навіть узимку. </div>
+      </div>
+      <div class="product-bottom">
+        <span class="product-price">1200 ₴</span>
+        <button class="product-btn">Додати</button>
+      </div>
+    </div>
+    <!-- 4 -->
+    <div class="product-card">
+      <div class="product-img">
+        <img src="images/туякорнік.jpg" alt="Туя Kornik" width="140" height="140">
+      </div>
+      <div class="product-info">
+        <div class="product-title">Туя Kornik (80–90 см)</div>
+        <div class="product-desc">Швидкорослий, декоративний сорт із широкою конусоподібною або яйцеподібною кроною та характерною особливістю: кінчики її зеленої хвої влітку набувають яскраво-золотистого, майже жовтого відтінку. </div>
+      </div>
+      <div class="product-bottom">
+        <span class="product-price">350 ₴</span>
+        <button class="product-btn">Додати</button>
+      </div>
+    </div>
+    <!-- 5 -->
+    <div class="product-card">
+      <div class="product-img">
+        <img src="images/туянана.jpg" alt="Туя Aurera Nana" width="140" height="140">
+      </div>
+      <div class="product-info">
+        <div class="product-title">Туя Aurera Nana (30-40 см)</div>
+        <div class="product-desc">Карликовий, повільно зростаючий сорт, що формує компактну, щільну, округло-яйцеподібну крону та приваблює хвою, яка протягом усього сезону має яскравий золотисто-жовтий колір.</div>
+      </div>
+      <div class="product-bottom">
+        <span class="product-price">359 ₴</span>
+        <button class="product-btn">Додати</button>
+      </div>
+    </div>
+    <!-- 6 -->
+    <div class="product-card">
+      <div class="product-img">
+        <img src="images/туясмарагд.jpg" alt="Туя Smaragd" width="140" height="140">
+      </div>
+      <div class="product-info">
+        <div class="product-title">Туя Smaragd (140–160 см)</div>
+        <div class="product-desc">Один із найпопулярніших сортів, що формує ідеально вузьку, пірамідальну (смарагдову) крону та має соковиту, густу хвою, яка зберігає свій насичений, яскраво-зелений колір протягом всієї зими.</div>
+      </div>
+      <div class="product-bottom">
+        <span class="product-price">850 ₴</span>
+        <button class="product-btn">Додати</button>
+      </div>
+    </div>
+    <!-- 7 -->
+    <div class="product-card">
+      <div class="product-img">
+        <img src="images/туятедді.webp" alt="Туя Teddy" width="140" height="140">
+      </div>
+      <div class="product-info">
+        <div class="product-title">Туя Teddy (70–80 см)</div>
+        <div class="product-desc">Унікальний карликовий сорт, який вирізняється м'якою, неколючою, ниткоподібною хвоєю, що утворює дуже щільну, компактну кулясту форму, нагадуючи зелену "плюшеву" подушку.</div>
+      </div>
+      <div class="product-bottom">
+        <span class="product-price">650 ₴</span>
+        <button class="product-btn">Додати</button>
+      </div>
+    </div>
+    <!-- 8 -->
+    <div class="product-card">
+      <div class="product-img">
+        <img src="images/самшит.jpg" alt="Самшит" width="140" height="140">
+      </div>
+      <div class="product-info">
+        <div class="product-title">Самшит (40–60 см)</div>
+        <div class="product-desc">Класичний вічнозелений чагарник, високо цінований за його дуже щільну, дрібну, глянцеву хвою та виняткову здатність витримувати багаторазову і глибоку стрижку.</div>
+      </div>
+      <div class="product-bottom">
+        <span class="product-price">250 ₴</span>
+        <button class="product-btn">Додати</button>
+      </div>
+    </div>
+    <!-- 9 -->
+    <div class="product-card">
+      <div class="product-img">
+        <img src="images/дейзі вайт.webp" alt="Ялина Daisy's White" width="140" height="140">
+      </div>
+      <div class="product-info">
+        <div class="product-title">Ялина Daisy's White 30–40 см</div>
+        <div class="product-desc">Привабливий, помірнорослий чагарник із розлогою, але щільною кроною, який вирізняється ефектним строкатим забарвленням: частина його зелених пагонів має кремово-білі вкраплення та кінчики.</div>
+      </div>
+      <div class="product-bottom">
+        <span class="product-price">450 ₴</span>
+        <button class="product-btn">Додати</button>
+      </div>
+    </div>
+    <!-- 10 -->
+    <div class="product-card">
+      <div class="product-img">
+        <img src="images/ялинаканадська коніка.jpg" alt="Ялина канадська Conica" width="140" height="140">
+      </div>
+      <div class="product-info">
+        <div class="product-title">Ялина канадська Conica 50–60 см</div>
+        <div class="product-desc">Популярний карликовий сорт, який формує ідеально симетричну, густу конусоподібну крону без необхідності стрижки, і має коротку, м'яку, світло-зелену хвою.</div>
+      </div>
+      <div class="product-bottom">
+        <span class="product-price">250 ₴</span>
+        <button class="product-btn">Додати</button>
+      </div>
+    </div>
+    <!-- 11 -->
+    <div class="product-card">
+      <div class="product-img">
+        <img src="images/ялівецьблюероу.jpg" alt="Ялівець Blue Arroou" width="140" height="140">
+      </div>
+      <div class="product-info">
+        <div class="product-title">Ялівець Blue Arroou (140–160 см)</div>
+        <div class="product-desc">Один із найстрункіших та найвужчих сортів ялівцю, що формує виключно вертикальну, колоноподібну крону та має привабливу, насичено-блакитну або сіро-блакитну хвою. </div>
+      </div>
+      <div class="product-bottom">
+        <span class="product-price">1200 ₴</span>
+        <button class="product-btn">Додати</button>
+      </div>
+    </div>
+    <!-- 12 -->
+    <div class="product-card">
+      <div class="product-img">
+        <img src="images/ялівецькитайський.webp" alt="Ялівець Stricta" width="140" height="140">
+      </div>
+      <div class="product-info">
+        <div class="product-title">Ялівець Stricta (30 см)</div>
+        <div class="product-desc">Популярний, помірнорослий сорт, що формує густу, симетричну, ширококонусоподібну крону та має колючу, насичено-блакитно-зелену хвою, що надає йому витонченого вигляду.</div>
+      </div>
+      <div class="product-bottom">
+        <span class="product-price">450 ₴</span>
+        <button class="product-btn">Додати</button>
+      </div>
+    </div>
+    <!-- 13 -->
+    <div class="product-card">
+      <div class="product-img">
+        <img src="images/ялівецькозацький.jpg" alt="Ялівець Juniperus sabina" width="140" height="140">
+      </div>
+      <div class="product-info">
+        <div class="product-title">Ялівець Juniperus sabina (30 см)</div>
+        <div class="product-desc">Витривалий, низькорослий та розлогий вид, який формує щільну килимоподібну або сланку крону з темно-зеленою, часто лускатою хвоєю та відомий своїм характерним ароматом. </div>
+      </div>
+      <div class="product-bottom">
+        <span class="product-price">450 ₴</span>
+        <button class="product-btn">Додати</button>
+      </div>
+    </div>
+    <!-- 14 -->
+    <div class="product-card">
+      <div class="product-img">
+        <img src="images/бересклет.jpeg" alt="Бруслина крилата" width="140" height="140">
+      </div>
+      <div class="product-info">
+        <div class="product-title">Бруслина крилата</div>
+        <div class="product-desc">Унікальний, листяний чагарник, найбільш відомий завдяки своєму неймовірно яскравому, вогненно-червоному осінньому забарвленню та особливим, пробковим наростам на гілках, які надають йому декоративності навіть узимку.</div>
+      </div>
+      <div class="product-bottom">
+        <span class="product-price">2500 ₴</span>
+        <button class="product-btn">Додати</button>
+      </div>
+    </div>
+    <!-- 15 -->
+    <div class="product-card">
+      <div class="product-img">
+        <img src="images/кортадерія біла.jpg" alt="Кортадерія біла" width="140" height="140">
+      </div>
+      <div class="product-info">
+        <div class="product-title">Кортадерія біла</div>
+        <div class="product-desc">Велична багаторічна злакова рослина, яка формує великі, щільні купи зеленого листя та вражає своїми високими, пухнастими суцвіттями сріблясто-білого кольору, що з'являються восени. </div>
+      </div>
+      <div class="product-bottom">
+        <span class="product-price">450 ₴</span>
+        <button class="product-btn">Додати</button>
+      </div>
+    </div>
+    <!-- 16 -->
+    <div class="product-card">
+      <div class="product-img">
+        <img src="images/кортадерія рожева.jpg" alt="Кортадерія рожева" width="140" height="140">
+      </div>
+      <div class="product-info">
+        <div class="product-title">Кортадерія рожева</div>
+        <div class="product-desc">Ефектна різновидність пампасного злаку, що утворює великі, архітектурні купи листя та випускає масивні, дуже пухнасті, ніжно-рожеві або світло-пурпурові суцвіття восени.</div>
+      </div>
+      <div class="product-bottom">
+        <span class="product-price">450 ₴</span>
+        <button class="product-btn">Додати</button>
+      </div>
+    </div>
+    <!-- 17 -->
+    <div class="product-card">
+      <div class="product-img">
+        <img src="images/кохія червона.webp" alt="Кохія червона" width="140" height="140">
+      </div>
+      <div class="product-info">
+        <div class="product-title">Кохія червона</div>
+        <div class="product-desc">Однорічна рослина з компактною, симетричною, яйцеподібною або колоноподібною формою, яка протягом літа має яскраво-зелену дрібну хвою, що восени набуває насиченого багряно-червоного кольору.</div>
+      </div>
+      <div class="product-bottom">
+        <span class="product-price">250 ₴</span>
+        <button class="product-btn">Додати</button>
+      </div>
+    </div>
+    <!-- 18 -->
+    <div class="product-card">
+      <div class="product-img">
+        <img src="images/лаванда.jpg" alt="Лаванда" width="140" height="140">
+      </div>
+      <div class="product-info">
+        <div class="product-title">Лаванда</div>
+        <div class="product-desc">Високоароматний напівчагарник, який вирізняється сріблясто-сірим вузьким листям та численними колосоподібними суцвіттями насичено-фіолетового кольору, що наповнюють сад п'янким, заспокійливим ароматом у розпал літа.</div>
+      </div>
+      <div class="product-bottom">
+        <span class="product-price">150 ₴</span>
+        <button class="product-btn">Додати</button>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+© 2025 Катерина Головаш. FloraHouse. Всі права захищені.
+</footer>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById('search');
+  const productCards = document.querySelectorAll('.product-card');
+  const shownCount = document.getElementById('shownCount');
+
+  searchInput.addEventListener('input', function() {
+    const query = searchInput.value.trim().toLowerCase();
+    let visibleCount = 0;
+
+    productCards.forEach(card => {
+      const title = card.querySelector('.product-title').textContent.toLowerCase();
+      if (title.includes(query)) {
+        card.style.display = '';
+        visibleCount++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    shownCount.textContent = visibleCount;
+  });
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // ... (пошук, як раніше)
+
+  // Додаємо товар у LocalStorage
+  document.querySelectorAll('.product-btn').forEach((btn) => {
+    btn.addEventListener('click', function() {
+      const card = btn.closest('.product-card');
+      const title = card.querySelector('.product-title').textContent;
+      const price = card.querySelector('.product-price').textContent;
+      const img = card.querySelector('img').src;
+
+      // Отримуємо поточний кошик з LocalStorage
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.push({ title, price, img });
+      localStorage.setItem('cart', JSON.stringify(cart));
+      alert('Товар додано в кошик!');
+    });
+  });
+});
+</script>
+</body>
+</html>
